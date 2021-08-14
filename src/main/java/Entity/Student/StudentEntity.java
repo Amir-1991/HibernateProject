@@ -7,9 +7,9 @@ import javax.persistence.*;
 public class StudentEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
-    private int id;
+    private long id;
 
     @Column(name = "FIRST_NAME")
     private String firstName;
@@ -20,9 +20,11 @@ public class StudentEntity {
     @Column(name = "NATIONAL_CODE")
     private String nationalCode;
 
-
     @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
+
+    public StudentEntity() {
+    }
 
     public StudentEntity(String firstName,
                          String lastName,
@@ -45,11 +47,11 @@ public class StudentEntity {
                 '}';
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
